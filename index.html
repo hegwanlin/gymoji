@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gymoji Support</title>
+<meta name="description" content="Gymoji 是一款 iOS 重量訓練紀錄 App。資料只存在你的手機，並可備份、匯出與匯入。">
+<meta name="theme-color" content="#0D0E13">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="./" aria-label="Gymoji Support 首頁">
+      <img src="assets/logo.webp" alt="" width="32" height="32">
+      Gymoji
+    </a>
+    <nav class="nav" aria-label="主要選單">
+      <a href="./" aria-current="page">首頁</a>
+      <a href="testflight/">加入 TestFlight</a>
+      <a href="privacy/">隱私權政策</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="inner">
+      <div class="hero">
+        <img class="hero-icon" src="assets/logo.webp" alt="Gymoji App 圖示" width="72" height="72">
+        <p class="pill">iOS 訓練紀錄 App</p>
+        <h1><span class="nb">記錄每一組訓練，</span><span class="nb">資料只留在你的手機。</span></h1>
+        <p class="lead">Gymoji 是一款 iOS 重量訓練紀錄 App，記錄動作、重量、次數與訓練時間。目前開放 TestFlight 測試。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="testflight/">加入 TestFlight 測試</a>
+          <a class="btn btn-secondary" href="privacy/">閱讀隱私權政策</a>
+        </div>
+      </div>
+
+      <ul class="shots" aria-label="Gymoji App 畫面">
+        <li><img src="assets/shot1.webp" alt="豐富動作庫，輕鬆選：依肌群與器材快速篩選，並自訂動作" width="420" height="913"></li>
+        <li><img src="assets/shot2.webp" alt="組組記錄，清楚不漏：熱身、正式、遞減、休息計時一次搞定" width="420" height="913"></li>
+        <li><img src="assets/shot3.webp" alt="一鍵分享你的訓練成果：疊在 IG 限動上，複製貼上毫不費力" width="420" height="913"></li>
+        <li><img src="assets/shot4.webp" alt="訓練肌群，一眼看懂：肌群占比與頻率熱力圖" width="420" height="913"></li>
+      </ul>
+      <div class="dots" id="dots" aria-hidden="true"><span aria-current="true"></span><span></span><span></span><span></span></div>
+
+      <section class="section" aria-labelledby="h-data">
+        <h2 id="h-data">你的資料，由你掌握</h2>
+        <ul class="cards">
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>只存在你的裝置</h3>
+            <p>所有訓練紀錄儲存在你的手機本機，不會上傳到任何伺服器，開發者也無法存取。</p>
+          </li>
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>不分享給第三方</h3>
+            <p>沒有廣告，也沒有使用任何數據分析（Analytics）服務。</p>
+          </li>
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>還原前先保留一份</h3>
+            <p>從備份檔還原前，Gymoji 會自動在你的裝置上另存目前的資料。你可以在「檔案」App 的「我的 iPhone › Gymoji」資料夾查看或刪除。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="h-backup">
+        <h2 id="h-backup">備份與匯入</h2>
+        <p class="muted" style="margin:0.75rem 0 0;max-width:40rem">備份與匯出都由你手動觸發，檔案存放在你選擇的位置，不會經過開發者的伺服器。</p>
+        <ul class="cards">
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>完整備份</h3>
+            <p>包含訓練紀錄、菜單、自訂動作（含照片）與設定。換手機或重裝 App 後，可以完整還原。</p>
+          </li>
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>CSV 訓練紀錄</h3>
+            <p>只包含訓練紀錄，可以用試算表開啟，也能匯入回 Gymoji。</p>
+          </li>
+          <li class="card">
+            <span class="dot" aria-hidden="true"></span>
+            <h3>從 Strong 匯入</h3>
+            <p>把你在 Strong 的訓練紀錄匯入 Gymoji。</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="h-support">
+        <h2 id="h-support">支援與回報</h2>
+        <p class="muted" style="margin:0.75rem 0 0">使用上有任何問題、錯誤回報或建議，歡迎來信。</p>
+        <div class="contact">
+          <span class="email" id="email-home">hegwanlin@gmail.com</span>
+          <button class="copy" type="button" data-copy="email-home">複製信箱</button>
+        </div>
+      </section>
+    
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 Kuan-Lin Ho · Gymoji</span>
+    <a href="privacy/">隱私權政策</a>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
