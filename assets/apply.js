@@ -1,7 +1,7 @@
 (function () {
   // Paste the Apps Script web app URL (ends in /exec) between the quotes.
-  // While this is empty, the page keeps showing the Google Form button.
-  var ENDPOINT = window.GYMOJI_APPLY_ENDPOINT || "";
+  // If this is ever emptied, the page falls back to the Google Form button.
+  var ENDPOINT = window.GYMOJI_APPLY_ENDPOINT || "https://script.google.com/macros/s/AKfycbzbObry9GwoiGGt-dmeqUgnZ07IUwbnVgZgSBifkZAyXRpyO1nO7tlwyRtbUpMtYarQYQ/exec";
 
   var wrap = document.getElementById("apply-wrap");
   var fallback = document.getElementById("apply-fallback");
