@@ -42,8 +42,39 @@
   <div class="inner">
       <p class="pill">TestFlight 測試計畫</p>
       <h1>加入 Gymoji 測試</h1>
-      <p class="lead">Gymoji 透過 Apple 的 TestFlight 提供測試版。填寫申請表單即可報名。</p>
-      <div class="actions">
+      <p class="lead">Gymoji 透過 Apple 的 TestFlight 提供測試版。填寫申請，通過後會寄出測試邀請。</p>
+
+      <div id="apply-wrap" hidden>
+        <form id="apply-form" class="apply" aria-labelledby="h-apply">
+          <h2 id="h-apply">申請加入</h2>
+          <div class="field">
+            <label for="f-email">Apple ID 的 email <span class="req">必填</span></label>
+            <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="120" placeholder="name@example.com">
+            <p class="hint">請填 App Store 或 iCloud 登入使用的 email，邀請才會寄到。</p>
+          </div>
+          <div class="field">
+            <label for="f-name">稱呼 <span class="opt">選填</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" maxlength="60">
+          </div>
+          <div class="field">
+            <label for="f-device">iPhone 機型與 iOS 版本 <span class="opt">選填</span></label>
+            <input id="f-device" name="device" type="text" maxlength="80" placeholder="例如：iPhone 15、iOS 26">
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-web">網站</label>
+            <input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn btn-primary" type="submit" id="apply-submit">送出申請</button>
+          <p class="hint">你的 email 只用於寄送 TestFlight 測試邀請。</p>
+          <p class="status" id="apply-status" role="status" aria-live="polite"></p>
+        </form>
+        <div class="apply apply-done" id="apply-done" hidden>
+          <h2>已收到你的申請</h2>
+          <p>通過後，TestFlight 測試邀請會寄到你填寫的 email，請留意信箱，也看一下垃圾郵件匣。</p>
+        </div>
+      </div>
+
+      <div class="actions" id="apply-fallback">
         <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdtw04apZG2AxbnvMpYK1ThWkzl943DoealwRz7C4TkfYB8ow/viewform?usp=header" target="_blank" rel="noopener">填寫申請表單</a>
       </div>
 
@@ -51,8 +82,8 @@
         <h2 id="h-steps">加入步驟</h2>
         <ol class="steps">
           <li>
-            <h3>填寫申請表單</h3>
-            <p>點選上方按鈕，送出你的申請。</p>
+            <h3>送出申請</h3>
+            <p>填入你的 Apple ID email，送出申請。</p>
           </li>
           <li>
             <h3>等待邀請</h3>
@@ -86,5 +117,6 @@
 </footer>
 
 <script src="../assets/app.js" defer></script>
+<script src="../assets/apply.js" defer></script>
 </body>
 </html>
