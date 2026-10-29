@@ -361,3 +361,7 @@ h3 { font-size: 1.0625rem; font-weight: 700; }
 .cards-4 { grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 36rem) { .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 62rem) { .cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.plist { margin: 0.75rem 0 0; padding-left: 1.25rem; display: grid; gap: 0.625rem; }
+.plist li::marker { color: var(--accent); }
+.plist strong { font-weight: 700; }
