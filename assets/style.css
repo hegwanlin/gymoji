@@ -12,7 +12,7 @@
   --accent-ink: #1C0F07;
   --accent-soft: rgba(238, 154, 94, 0.14);
 
-  --font: "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   color-scheme: dark;
 }
 
