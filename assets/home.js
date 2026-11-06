@@ -21,13 +21,14 @@
     var vw = window.innerWidth;
     var stageH = window.innerHeight - hh;
     var mobile = vw < 900;
-    var avail = mobile ? stageH - copy.offsetHeight - 70 : stageH - 64;
+    var avail = mobile ? stageH - copy.offsetHeight - 44 : stageH - 64;
     var pw = Math.min(mobile ? vw * 0.74 : 340, avail / 2.13);
     pw = Math.max(200, Math.min(340, pw));
     var bz = Math.round(pw * 0.03);
     scale = (pw - bz * 2) / 390;
     var ph = Math.round(844 * scale + bz * 2);
     phone.style.setProperty("--pw", Math.round(pw) + "px");
+    tour.style.setProperty("--pw", Math.round(pw) + "px");
     phone.style.setProperty("--bz", bz + "px");
     phone.style.setProperty("--s", scale.toFixed(4));
     phone.style.setProperty("--ph", ph + "px");
