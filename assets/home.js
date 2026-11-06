@@ -15,15 +15,25 @@
   var scale = 1;
 
   /* ---------- Sizing ---------- */
+  // Size the phone from the pinned stage's own height. The stage uses 100svh (the
+  // smallest viewport, with browser toolbars shown), so it stays the same when mobile
+  // Safari hides its toolbars while scrolling. Using window.innerHeight here made the
+  // phone grow taller than the stage and its bottom got cut off.
+  var lastW = 0, lastH = 0;
   function layout() {
     var hh = header ? header.offsetHeight : 57;
     tour.style.setProperty("--hh", hh + "px");
-    var vw = window.innerWidth;
-    var stageH = window.innerHeight - hh;
+    var vw = document.documentElement.clientWidth;
+    var stageH = stage.clientHeight;
+    if (vw === lastW && stageH === lastH && lastW) return;
+    lastW = vw; lastH = stageH;
     var mobile = vw < 900;
-    var avail = mobile ? stageH - copy.offsetHeight - 44 : stageH - 64;
-    var pw = Math.min(mobile ? vw * 0.74 : 340, avail / 2.13);
-    pw = Math.max(200, Math.min(340, pw));
+    var cs = getComputedStyle(stage);
+    var avail = mobile
+      ? stageH - copy.offsetHeight - parseFloat(cs.paddingTop) - parseFloat(cs.rowGap || cs.gap || 0) - 20
+      : stageH - 64;
+    var pw = Math.min(mobile ? vw * 0.74 : 340, avail / 2.1);
+    pw = Math.max(150, Math.min(340, pw));
     var bz = Math.round(pw * 0.03);
     scale = (pw - bz * 2) / 390;
     var ph = Math.round(844 * scale + bz * 2);
@@ -195,6 +205,7 @@
   }, { passive: true });
 
   window.addEventListener("resize", function () { layout(); });
+  window.addEventListener("orientationchange", function () { lastW = 0; setTimeout(layout, 300); });
 
   // Clicking a step title scrolls to that step
   steps.forEach(function (li, i) {
@@ -207,7 +218,7 @@
 
   layout();
   setActive(stepFromScroll());
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { lastW = 0; layout(); });
 
   /* ---------- Feature cards animate when they enter the viewport ---------- */
   var cards = document.querySelectorAll(".reveal");

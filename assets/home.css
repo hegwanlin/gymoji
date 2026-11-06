@@ -20,12 +20,15 @@
 .tour {
   --hh: 57px;
   position: relative;
+  height: calc(var(--steps) * 85vh + 100vh);
   height: calc(var(--steps) * 85svh + 100svh);
+  touch-action: pan-y;
   margin-top: clamp(2rem, 6vw, 4rem);
 }
 .tour-stage {
   position: sticky;
   top: var(--hh);
+  height: calc(100vh - var(--hh));
   height: calc(100svh - var(--hh));
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
