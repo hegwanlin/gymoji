@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gymoji</title>
-<meta name="description" content="Gymoji 是一款 iOS 重量訓練紀錄 App。訓練資料完整保存、由你掌控，並可備份、匯出與匯入。">
+<meta name="description" content="Gymoji 是一款 iOS 重量訓練紀錄 App。無廣告、無需登入，訓練資料完整由你掌控，並可備份到你自己的 iCloud。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gymoji">
 <meta property="og:title" content="Gymoji">
-<meta property="og:description" content="Gymoji 是一款 iOS 重量訓練紀錄 App。訓練資料完整保存、由你掌控，並可備份、匯出與匯入。">
+<meta property="og:description" content="Gymoji 是一款 iOS 重量訓練紀錄 App。無廣告、無需登入，訓練資料完整由你掌控，並可備份到你自己的 iCloud。">
 <meta property="og:url" content="https://hegwanlin.github.io/gymoji/">
 <meta property="og:image" content="https://hegwanlin.github.io/gymoji/assets/og-image.png?v=2">
 <meta property="og:image:width" content="1200">
@@ -21,8 +21,39 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
 <link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/home.css?v=1">
 </head>
-<body>
+<body class="home">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 6.5h16M9 6.5V4.5h6v2M6.5 6.5l1 13h9l1-13M10.5 10v6.5M13.5 10v6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9.5h10M7 12.5h10M7 15.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v3.2h3.2M12 8v4.3l2.8 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-updown" viewBox="0 0 24 24"><path d="M8 9.5l4-4 4 4M8 14.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M8 19V5M4 9l4-4 4 4M16 5v14M12 15l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-belt" viewBox="0 0 24 24"><path d="M12 2.8l2.3 1.6 2.8-.1.9 2.6 2.3 1.6-.8 2.7.8 2.7-2.3 1.6-.9 2.6-2.8-.1L12 21.2l-2.3-1.6-2.8.1-.9-2.6-2.3-1.6.8-2.7L3.7 10l2.3-1.6.9-2.6 2.8.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 9.5l5 5M14.5 9.5l-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-belt-on" viewBox="0 0 24 24"><path d="M12 2.8l2.3 1.6 2.8-.1.9 2.6 2.3 1.6-.8 2.7.8 2.7-2.3 1.6-.9 2.6-2.8-.1L12 21.2l-2.3-1.6-2.8.1-.9-2.6-2.3-1.6.8-2.7L3.7 10l2.3-1.6.9-2.6 2.8.1z" fill="currentColor"/><path d="M8.6 12.2l2.3 2.3 4.5-4.6" fill="none" stroke="#1D1E24" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="12.5" r="7.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 12.5V8.8M12 12.5l2.4 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-gym" viewBox="0 0 24 24"><rect x="1" y="8.5" width="2.6" height="7" rx="1.3"/><rect x="4.6" y="5.5" width="3.6" height="13" rx="1.8"/><rect x="8.2" y="10.9" width="7.6" height="2.2" rx="1.1"/><rect x="15.8" y="5.5" width="3.6" height="13" rx="1.8"/><rect x="20.4" y="8.5" width="2.6" height="7" rx="1.3"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="4.5" y="4.5" width="15" height="17.5" rx="2.8"/><rect x="8.5" y="2.2" width="7" height="4.4" rx="1.6" fill="currentColor" stroke="#2a2b31" stroke-width="1.2"/><path d="M8 11h8M8 14.5h8M8 18h5" stroke="#2a2b31" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><circle cx="4.5" cy="6" r="1.6"/><circle cx="4.5" cy="12" r="1.6"/><circle cx="4.5" cy="18" r="1.6"/><rect x="8.5" y="4.9" width="13" height="2.2" rx="1.1"/><rect x="8.5" y="10.9" width="13" height="2.2" rx="1.1"/><rect x="8.5" y="16.9" width="13" height="2.2" rx="1.1"/></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><rect x="2.5" y="11" width="5.5" height="10" rx="1.6"/><rect x="9.25" y="7" width="5.5" height="14" rx="1.6"/><rect x="16" y="3" width="5.5" height="18" rx="1.6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 3.5v11M8 7.2l4-3.7 4 3.7M8 10.5H6.8a1.8 1.8 0 0 0-1.8 1.8v6.4a1.8 1.8 0 0 0 1.8 1.8h10.4a1.8 1.8 0 0 0 1.8-1.8v-6.4a1.8 1.8 0 0 0-1.8-1.8H16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="3.5" width="11" height="13.5" rx="2.4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 17v1.6a2 2 0 0 1-2 2H6.5a2 2 0 0 1-2-2V9.4a2 2 0 0 1 2-2h2" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-skip" viewBox="0 0 24 24"><path d="M6 5.5l9 6.5-9 6.5z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M18 5.5v13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-open" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M10 14l5-5M10.5 9H15v4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-torch" viewBox="0 0 24 24"><path d="M8 3h8v3l-2 3v12h-4V9L8 6z" fill="currentColor"/><circle cx="12" cy="13.5" r="1.1" fill="#3a3346"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h2l1.5-2h5L16 6.5h2a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" fill="currentColor"/><circle cx="12" cy="12.6" r="3.2" fill="#3a3346"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 16 12"><path d="M8 11.5l2.2-2.6a3.2 3.2 0 0 0-4.4 0zM3.7 6.9a6.2 6.2 0 0 1 8.6 0l1.5-1.8a8.6 8.6 0 0 0-11.6 0zM.4 3.1a11 11 0 0 1 15.2 0L16 2.6" fill="currentColor"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5h10.5a4 4 0 0 0 .6-7.95A5.5 5.5 0 0 0 7.5 9.2 4.7 4.7 0 0 0 7 18.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
 
 <header class="site-header">
   <div class="inner">
@@ -38,86 +69,258 @@
   </div>
 </header>
 
-<main>
-  <div class="inner">
-      <div class="hero">
-        <img class="hero-icon" src="assets/logo.webp?v=2" alt="Gymoji App 圖示" width="72" height="72">
-        <p class="pill">iOS 訓練紀錄 App</p>
-        <h1><span class="nb">記錄每一組訓練，</span><span class="nb">資料完整保存，</span><span class="nb">由你掌控。</span></h1>
-        <p class="lead">Gymoji 是一款 iOS 重量訓練紀錄 App，記錄動作、重量、次數與訓練時間。目前開放 TestFlight 測試。</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="testflight/">加入 TestFlight 測試</a>
-          <a class="btn btn-secondary" href="privacy/">閱讀隱私權政策</a>
-        </div>
+<main id="main">
+  <section class="inner hero home-hero">
+    <img class="hero-icon" src="assets/logo.webp?v=2" alt="Gymoji App 圖示" width="72" height="72">
+    <p class="pill">iOS 重量訓練紀錄 App</p>
+    <h1><span class="nb">記錄每一組訓練，</span><span class="nb">資料完整保存，</span><span class="nb">由你掌控。</span></h1>
+    <p class="lead">Gymoji 記錄你的動作、重量、次數與訓練時間。沒有廣告，不用登入，打開就能開始練。目前開放 TestFlight 測試。</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="testflight/">加入 TestFlight 測試</a>
+      <a class="btn btn-secondary" href="#tour">看看怎麼用</a>
+    </div>
+    <ul class="chips" aria-label="特色">
+      <li>無廣告</li><li>無需登入</li><li>資料由你掌控</li><li>iCloud 備份</li>
+    </ul>
+  </section>
+
+  <!-- Pinned phone: scrolling through this section steps the phone through five screens -->
+  <section class="tour" id="tour" aria-label="Gymoji 功能導覽" style="--steps:5">
+    <div class="tour-stage">
+      <div class="tour-copy">
+        <ol class="tour-steps">
+          <li class="is-active" data-step="0">
+            <button type="button"><span class="num">01</span><span class="t">訓練中</span></button>
+            <div class="desc"><h2>每一組，清楚記下</h2><p>熱身、正式組分開標示，重量和次數直接填。打勾完成一組，休息計時就自動開始。</p></div>
+          </li>
+          <li data-step="1">
+            <button type="button"><span class="num">02</span><span class="t">休息計時器</span></button>
+            <div class="desc"><h2>鎖定畫面看倒數</h2><p>手機鎖著也看得到剩餘時間和下一組動作，不用解鎖就能跳過休息。</p></div>
+          </li>
+          <li data-step="2">
+            <button type="button"><span class="num">03</span><span class="t">分享訓練</span></button>
+            <div class="desc"><h2>練完，一鍵分享</h2><p>訓練量、每個動作的最佳組和新紀錄自動整理成圖。選透明背景，複製後就能貼上 IG 限動。</p></div>
+          </li>
+          <li data-step="3">
+            <button type="button"><span class="num">04</span><span class="t">分析</span></button>
+            <div class="desc"><h2>練了哪裡，一眼看懂</h2><p>各肌群的訓練量占比和人體圖對照，再加上訓練頻率，哪裡練太少馬上知道。</p></div>
+          </li>
+          <li data-step="4">
+            <button type="button"><span class="num">05</span><span class="t">動作清單</span></button>
+            <div class="desc"><h2>動作庫，好找好選</h2><p>依肌群和器材篩選，每個動作的最佳重量直接列出，也能新增自己的動作。</p></div>
+          </li>
+        </ol>
       </div>
 
-      <ul class="shots" aria-label="Gymoji App 畫面">
-        <li><img src="assets/shot1.webp" alt="組組記錄，清楚不漏：熱身、正式、遞減、休息計時一次搞定" width="420" height="913"></li>
-        <li><img src="assets/shot4.webp" alt="訓練肌群，一眼看懂：肌群占比與頻率熱力圖" width="420" height="913" loading="lazy"></li>
-        <li><img src="assets/shot5.webp" alt="一鍵分享你的訓練成果：疊在 IG 限動上，複製貼上毫不費力" width="420" height="913" loading="lazy"></li>
-        <li><img src="assets/shot3.webp" alt="豐富動作庫，輕鬆選：依肌群與器材快速篩選，並自訂動作" width="420" height="913" loading="lazy"></li>
-        <li><img src="assets/shot2.webp" alt="鎖定畫面看休息倒數：即時動態顯示剩餘時間與下一個動作" width="420" height="913" loading="lazy"></li>
-      </ul>
-      <div class="dots" id="dots" aria-hidden="true"><span aria-current="true"></span><span></span><span></span><span></span><span></span></div>
+      <div class="tour-device">
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="scaler">
+              <div class="island"></div>
 
-      <section class="section" aria-labelledby="h-data">
-        <h2 id="h-data">你的資料，由你掌握</h2>
-        <ul class="cards">
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>完整保存</h3>
-            <p>你記錄的每一組訓練，連同菜單、自訂動作與設定，都完整保留，也能隨時備份。</p>
-          </li>
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>不分享給第三方</h3>
-            <p>開發者無法存取你的資料。沒有廣告，也沒有使用任何數據分析（Analytics）服務。</p>
-          </li>
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>還原前先保留一份</h3>
-            <p>從備份檔還原前，Gymoji 會自動在你的裝置上另存目前的資料。你可以在「檔案」App 的「我的 iPhone › Gymoji」資料夾查看或刪除。</p>
-          </li>
-        </ul>
-      </section>
+              <!-- 01 Workout -->
+              <div class="scr scr-workout is-active" data-screen="0">
+                <div class="sbar"><span class="clock">19:12</span><span class="sicons"><svg class="sig"><use href="#i-signal"/></svg><svg class="wf"><use href="#i-wifi"/></svg><span class="bat">93</span></span></div>
+                <div class="sheet">
+                  <div class="w-top">
+                    <span class="sq"><svg><use href="#i-x"/></svg></span>
+                    <span class="elapsed"><b data-elapsed>1:08</b><small>經過時間</small></span>
+                    <span class="done-btn">完成</span>
+                  </div>
+                  <p class="w-date">11月4日 19:11</p>
+                  <p class="w-title">Upper Push + Pull</p>
+                  <p class="w-stats"><b>0/6</b> 動作 <b data-sets>2/24</b> 組 <b data-vol-top>900</b> kg</p>
+                  <div class="w-supp">
+                    <div class="supp-row"><span class="cb on"><svg><use href="#i-check"/></svg></span>已進食<span class="cb on"><svg><use href="#i-check"/></svg></span>EAA<span class="cb"></span>肌酸</div>
+                    <div class="supp-other">其他補充品（選填）</div>
+                    <div class="supp-rest"><b>預設休息</b><span class="rest-val">150 秒</span><span class="stepper"><i>−</i><i>+</i></span><span class="swap"><svg><use href="#i-swap"/></svg></span></div>
+                  </div>
+                  <div class="w-ex">
+                    <div class="ex-head">
+                      <img src="assets/ui/ex-bench.webp" alt="" width="44" height="44">
+                      <div class="ex-name"><b>Barbell Bench Press - Medium Grip</b><small>胸・自由重量</small></div>
+                      <svg class="ic"><use href="#i-history"/></svg><svg class="ic"><use href="#i-trash"/></svg>
+                    </div>
+                    <div class="ex-total">
+                      <div><small>已完成總量</small><b><span data-vol>900</span> <i>kg</i></b></div>
+                      <span class="rest-pill"><svg><use href="#i-timer"/></svg><span data-rest>2:30</span></span>
+                      <span class="unit"><b>kg</b><i>lb</i></span>
+                    </div>
+                    <div class="cols"><span>重量 (kg)</span><span>次數</span></div>
+                    <div class="set done"><div class="set-main"><span class="kind warm">熱身<svg><use href="#i-updown"/></svg></span><span class="box">20</span><span class="by">×</span><span class="box">15</span><svg class="ic"><use href="#i-note"/></svg><svg class="ic"><use href="#i-trash"/></svg><span class="tick"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="set-sub"><svg class="belt"><use href="#i-belt"/></svg>腰帶<span class="slider"><i style="width:86%"></i></span>姿勢自評</div></div>
+                    <div class="set done"><div class="set-main"><span class="kind">正式<svg><use href="#i-updown"/></svg></span><span class="box">50</span><span class="by">×</span><span class="box">12</span><svg class="ic"><use href="#i-note"/></svg><svg class="ic"><use href="#i-trash"/></svg><span class="tick"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="set-sub"><svg class="belt on"><use href="#i-belt-on"/></svg>腰帶<span class="slider"><i style="width:77%"></i></span>姿勢自評</div></div>
+                    <div class="set target"><div class="set-main"><span class="kind">正式<svg><use href="#i-updown"/></svg></span><span class="box big">70</span><span class="by">×</span><span class="box big">9</span><svg class="ic"><use href="#i-note"/></svg><svg class="ic"><use href="#i-trash"/></svg><span class="tick"><svg><use href="#i-check"/></svg></span></div>
+                      <div class="set-sub"><svg class="belt on"><use href="#i-belt-on"/></svg>腰帶<span class="slider"><i class="fill-anim"></i></span>姿勢自評</div></div>
+                  </div>
+                </div>
+                <span class="tap"></span>
+              </div>
 
-      <section class="section" aria-labelledby="h-backup">
-        <h2 id="h-backup">備份與匯入</h2>
-        <p class="muted" style="margin:0.75rem 0 0;max-width:40rem">四種方式保存或帶入你的資料。備份與匯出的檔案存放在你選擇的位置或你自己的 iCloud，不會經過開發者的伺服器。</p>
-        <ul class="cards cards-4">
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>離線完整備份與還原</h3>
-            <p>在手機上匯出完整備份檔，包含訓練紀錄、菜單、自訂動作（含照片）與設定。換手機或重裝 App 後，可以完整還原。</p>
-          </li>
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>iCloud 線上完整備份與還原</h3>
-            <p>把完整備份存到你自己的 iCloud，需要時再從 iCloud 還原。</p>
-          </li>
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>訓練紀錄 CSV 匯入匯出</h3>
-            <p>只包含訓練紀錄，可以用試算表開啟，也能匯入回 Gymoji。</p>
-          </li>
-          <li class="card">
-            <span class="dot" aria-hidden="true"></span>
-            <h3>從 Strong 匯入訓練紀錄</h3>
-            <p>把你在 Strong 的訓練紀錄匯入 Gymoji。</p>
-          </li>
-        </ul>
-      </section>
+              <!-- 02 Rest timer on the lock screen -->
+              <div class="scr scr-lock" data-screen="1">
+                <div class="sbar"><span class="carrier">中華電信</span><span class="sicons"><svg class="sig"><use href="#i-signal"/></svg><svg class="wf"><use href="#i-wifi"/></svg><span class="bat">93</span></span></div>
+                <p class="l-date">11月4日 週三</p>
+                <p class="l-clock">19:13</p>
+                <div class="live">
+                  <div class="live-top"><svg class="gym"><use href="#i-gym"/></svg><b>休息中</b><span class="live-time" data-live>1:07</span></div>
+                  <div class="live-mid"><span>下一組・Barbell Bench Press - Me…</span><span>已完成 1/24 組</span></div>
+                  <div class="live-btns"><span><svg><use href="#i-skip"/></svg>跳過休息</span><span class="go"><svg><use href="#i-open"/></svg>回到 App</span></div>
+                </div>
+                <span class="round l"><svg><use href="#i-torch"/></svg></span>
+                <span class="round r"><svg><use href="#i-cam"/></svg></span>
+                <span class="home-ind"></span>
+              </div>
 
-      <section class="section" aria-labelledby="h-support">
-        <h2 id="h-support">支援與回報</h2>
-        <p class="muted" style="margin:0.75rem 0 0">使用上有任何問題、錯誤回報或建議，歡迎來信。</p>
-        <div class="contact">
-          <span class="email" id="email-home">hegwanlin@gmail.com</span>
-          <button class="copy" type="button" data-copy="email-home">複製信箱</button>
+              <!-- 03 Share -->
+              <div class="scr scr-share" data-screen="2">
+                <div class="sbar"><span class="clock">19:12</span><span class="sicons"><svg class="sig"><use href="#i-signal"/></svg><svg class="wf"><use href="#i-wifi"/></svg><span class="bat">93</span></span></div>
+                <div class="sheet">
+                  <div class="sh-top"><span class="sq"><svg><use href="#i-x"/></svg></span><b>分享訓練</b></div>
+                  <div class="seg2"><span class="on">圖片</span><span>影片</span></div>
+                  <div class="sh-card" data-bg="0">
+                    <div class="sh-inner">
+                      <p class="sh-date">2026.11.01 <small>101 分鐘</small></p>
+                      <p class="sh-vol"><small>訓練量</small><b data-share-vol>12,843.5</b><i>kg</i></p>
+                      <ul class="sh-rows">
+                        <li><span>Barbell Bench Press - Medium G…</span><b>70 × 9</b></li>
+                        <li><span>Chin-Up</span><b>80 × 8</b></li>
+                        <li><span>Barbell Shoulder Press</span><b>47.5 × 7</b></li>
+                        <li><span>Bent Over Barbell Row</span><b>80 × 9</b></li>
+                        <li><span>Dips - Chest Version</span><b>77 × 12</b></li>
+                        <li><span>Barbell Curl</span><b>30 × 14</b></li>
+                      </ul>
+                      <div class="sh-body">
+                        <img src="assets/ui/body-share.webp" alt="" width="188" height="168">
+                        <span class="pr l"><small>新紀錄・胸</small>Dips - Ches…<br>77 × 12</span>
+                        <span class="pr r"><small>新紀錄・背</small>Chin-Up<br>80 × 8</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bg-chips"><span class="on">原圖</span><span>全透明</span><span>半透明</span><span>白底</span></div>
+                  <p class="sh-hint">複製後到 IG 限動編輯畫面長按「貼上」，就能把圖疊在照片上。</p>
+                  <span class="big-btn primary"><svg><use href="#i-copy"/></svg>複製圖片</span>
+                  <span class="big-btn"><svg><use href="#i-share"/></svg>分享或儲存</span>
+                  <span class="toast">已複製</span>
+                </div>
+                <span class="tap"></span>
+              </div>
+
+              <!-- 04 Analysis -->
+              <div class="scr scr-analysis" data-screen="3">
+                <div class="sbar"><span class="clock">19:12</span><span class="sicons"><svg class="sig"><use href="#i-signal"/></svg><svg class="wf"><use href="#i-wifi"/></svg><span class="bat">93</span></span></div>
+                <p class="big-title">分析</p>
+                <div class="an-card">
+                  <div class="seg4"><span class="on">近 1 個月</span><span>近 3 個月</span><span>近 6 個月</span><span>近 1 年</span></div>
+                  <div class="an-head">
+                    <div><small>肌群訓練量</small><b><span data-an-vol>84,474</span><i>kg</i></b><em>比前期多 13%</em></div>
+                    <span class="sq"><svg><use href="#i-share"/></svg></span>
+                  </div>
+                  <ul class="bars">
+                    <li><span>腿</span><i><s style="--w:46%"></s></i><b>46%</b></li>
+                    <li><span>胸</span><i><s style="--w:21%"></s></i><b>21%</b></li>
+                    <li><span>背</span><i><s style="--w:20%"></s></i><b>20%</b></li>
+                    <li><span>手</span><i><s style="--w:6.5%"></s></i><b>6%</b></li>
+                    <li><span>肩</span><i><s style="--w:6.3%"></s></i><b>6%</b></li>
+                    <li><span>核心</span><i><s style="--w:0%"></s></i><b>0%</b></li>
+                  </ul>
+                  <img class="an-body" src="assets/ui/body-analysis.webp" alt="" width="290" height="243">
+                </div>
+                <div class="an-card freq"><b>訓練頻率</b><span>近 12 週平均每週 <b>2.4</b> 次</span>
+                  <div class="heat"></div></div>
+                <nav class="tabbar"><span><svg><use href="#i-clip"/></svg>紀錄</span><span><svg><use href="#i-list"/></svg>菜單</span><span><svg><use href="#i-gym"/></svg>動作</span><span class="on"><svg><use href="#i-bars"/></svg>分析</span></nav>
+              </div>
+
+              <!-- 05 Exercise library -->
+              <div class="scr scr-ex" data-screen="4">
+                <div class="sbar"><span class="clock">19:13</span><span class="sicons"><svg class="sig"><use href="#i-signal"/></svg><svg class="wf"><use href="#i-wifi"/></svg><span class="bat">93</span></span></div>
+                <div class="ex-title"><p class="big-title">動作</p><span class="sq"><svg><use href="#i-plus"/></svg></span></div>
+                <div class="mtabs"><span class="on">全部</span><span>胸</span><span>背</span><span>腿</span><span>手</span><span>肩</span><span>核心</span><i class="uline"></i></div>
+                <p class="equip">器材 <b>全部</b><svg><use href="#i-updown"/></svg></p>
+                <p class="group"><span>胸</span><span>15 個</span></p>
+                <ul class="ex-list">
+                  <li><img src="assets/ui/ex-bench.webp" alt="" width="44" height="44"><div><b>Barbell Bench Press - Medium Grip</b><small>自由重量</small></div><em>85<small>最佳 kg</small></em></li>
+                  <li><img src="assets/ui/ex-incline.webp" alt="" width="44" height="44"><div><b>Barbell Incline Bench Press - Medium Grip</b><small>自由重量</small></div><em class="none">—</em></li>
+                  <li><img src="assets/ui/ex-cable.webp" alt="" width="44" height="44"><div><b>Cable Crossover</b><small>機器</small></div><em class="none">—</em></li>
+                  <li><span class="ph"><svg><use href="#i-gym"/></svg></span><div><b>Chest Fly</b><small>機器</small></div><em>93<small>最佳 kg</small></em></li>
+                  <li><img src="assets/ui/ex-decline.webp" alt="" width="44" height="44"><div><b>Decline Barbell Bench Press</b><small>自由重量</small></div><em class="none">—</em></li>
+                  <li><img src="assets/ui/ex-decline-db.webp" alt="" width="44" height="44"><div><b>Decline Dumbbell Bench Press</b><small>自由重量</small></div><em class="none">—</em></li>
+                  <li><img src="assets/ui/ex-dips.webp" alt="" width="44" height="44"><div><b>Dips - Chest Version</b><small>徒手</small></div><em>77<small>最佳 kg</small></em></li>
+                </ul>
+                <nav class="tabbar"><span><svg><use href="#i-clip"/></svg>紀錄</span><span><svg><use href="#i-list"/></svg>菜單</span><span class="on"><svg><use href="#i-gym"/></svg>動作</span><span><svg><use href="#i-bars"/></svg>分析</span></nav>
+              </div>
+
+            </div>
+          </div>
         </div>
-      </section>
-    
-  </div>
+        <div class="tour-dots" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inner section why" id="why" aria-labelledby="h-why">
+    <h2 id="h-why" class="sec-title">只做記錄訓練，<br>不做多餘的事</h2>
+    <ul class="why-grid">
+      <li class="why-card reveal">
+        <div class="why-vis vis-ad" aria-hidden="true"><span class="ad">AD</span></div>
+        <h3>無廣告</h3>
+        <p>組間休息就是休息，不會跳出廣告。也沒有使用任何數據分析（Analytics）服務。</p>
+      </li>
+      <li class="why-card reveal">
+        <div class="why-vis vis-login" aria-hidden="true">
+          <span class="field-x">電子郵件</span><span class="field-x">密碼</span><span class="go-btn">開始訓練</span>
+        </div>
+        <h3>無需登入</h3>
+        <p>不用註冊帳號、不用記密碼。下載打開，就能開始記錄第一組。</p>
+      </li>
+      <li class="why-card reveal">
+        <div class="why-vis vis-data" aria-hidden="true">
+          <span class="file">完整備份</span><span class="file">CSV</span><span class="file">從 Strong 匯入</span>
+        </div>
+        <h3>訓練資料完整由你掌握</h3>
+        <p>訓練紀錄、菜單、自訂動作和設定都存在你的手機上，開發者無法存取。可以隨時匯出完整備份或 CSV，也能從 Strong 匯入。</p>
+      </li>
+      <li class="why-card reveal">
+        <div class="why-vis vis-cloud" aria-hidden="true">
+          <svg class="cloud"><use href="#i-cloud"/></svg>
+          <span class="prog"><i></i></span>
+          <span class="prog-label"><span class="a">備份到 iCloud…</span><span class="b">已備份 ✓</span></span>
+        </div>
+        <h3>iCloud 備份</h3>
+        <p>完整備份存到你自己的 iCloud，不經過開發者的伺服器。換手機或重裝 App，都能完整還原。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="inner section" aria-labelledby="h-backup">
+    <h2 id="h-backup">備份與匯入</h2>
+    <p class="muted" style="margin:0.75rem 0 0;max-width:40rem">四種方式保存或帶入你的資料。備份與匯出的檔案存放在你選擇的位置或你自己的 iCloud，不會經過開發者的伺服器。</p>
+    <ul class="cards cards-4">
+      <li class="card"><span class="dot" aria-hidden="true"></span><h3>離線完整備份與還原</h3><p>在手機上匯出完整備份檔，包含訓練紀錄、菜單、自訂動作（含照片）與設定。換手機或重裝 App 後，可以完整還原。</p></li>
+      <li class="card"><span class="dot" aria-hidden="true"></span><h3>iCloud 線上完整備份與還原</h3><p>把完整備份存到你自己的 iCloud，需要時再從 iCloud 還原。</p></li>
+      <li class="card"><span class="dot" aria-hidden="true"></span><h3>訓練紀錄 CSV 匯入匯出</h3><p>只包含訓練紀錄，可以用試算表開啟，也能匯入回 Gymoji。</p></li>
+      <li class="card"><span class="dot" aria-hidden="true"></span><h3>從 Strong 匯入訓練紀錄</h3><p>把你在 Strong 的訓練紀錄匯入 Gymoji。</p></li>
+    </ul>
+    <p class="muted small-note">從備份檔還原前，Gymoji 會自動在你的裝置上另存目前的資料。你可以在「檔案」App 的「我的 iPhone › Gymoji」資料夾查看或刪除。</p>
+  </section>
+
+  <section class="inner section" aria-labelledby="h-support">
+    <h2 id="h-support">支援與回報</h2>
+    <p class="muted" style="margin:0.75rem 0 0">使用上有任何問題、錯誤回報或建議，歡迎來信。</p>
+    <div class="contact">
+      <span class="email" id="email-home">hegwanlin@gmail.com</span>
+      <button class="copy" type="button" data-copy="email-home">複製信箱</button>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="inner">
+      <img src="assets/logo.webp?v=2" alt="" width="88" height="88">
+      <h2>下一組，<br>就用 Gymoji 記</h2>
+      <a class="btn btn-light" href="testflight/">加入 TestFlight 測試</a>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -128,5 +331,6 @@
 </footer>
 
 <script src="assets/app.js" defer></script>
+<script src="assets/home.js?v=1" defer></script>
 </body>
 </html>
